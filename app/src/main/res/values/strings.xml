@@ -3,4 +3,16 @@
     <string name="third_fragment">Tuliskan nama mu dibawah</string>
     <string name="second_fragment">Bermain Suit melawan komputer</string>
     <string name="first_fragment">Bermain Suit melawan sesama pemain</string>
+    <string name="player1">Player1</string>
+
+    <string name="com">COM</string>
+    <string name="kertas">kertas</string>
+    <string name="batu">batu</string>
+    <string name="guntingCom" />
+    <string name="vs">VS</string>
+    <string name="gunting">gunting</string>
+    <string name="winplayer1">player 1 win</string>
+    <string name="Draw">Draw</string>
+
+    <string name="comMenang">comMenang</string>
 </resources>

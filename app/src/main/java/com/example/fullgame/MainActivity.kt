@@ -26,10 +26,7 @@ class MainActivity() : AppCompatActivity() {
 
         val viewpager2 = findViewById<ViewPager2>(R.id.view_pager_2)
         viewpager2.adapter = ViewPagerAdapter(this.supportFragmentManager, lifecycle)
-
         val indicator : CircleIndicator3 = findViewById(R.id.indicator)
-
-
         indicator.setViewPager(viewpager2)
 
     }
