@@ -5,7 +5,8 @@
     <string name="first_fragment">Bermain Suit melawan sesama pemain</string>
     <string name="player1">Player1</string>
 
-    <string name="com">COM</string>
+    <string name="playerDua">Player2</string>
+    <string name="COM">COM</string>
     <string name="kertas">kertas</string>
     <string name="batu">batu</string>
     <string name="guntingCom" />
@@ -15,4 +16,5 @@
     <string name="Draw">Draw</string>
 
     <string name="comMenang">comMenang</string>
+    <string name="player2">Player 2 win</string>
 </resources>

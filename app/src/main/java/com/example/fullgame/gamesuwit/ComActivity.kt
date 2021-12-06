@@ -8,8 +8,6 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.example.fullgame.R
 import com.example.fullgame.databinding.ActivityComBinding
-import com.example.gamesuwit.Callback
-import com.example.gamesuwit.Controller
 
 class ComActivity : AppCompatActivity(), Callback {
     private lateinit var binding: ActivityComBinding
@@ -20,7 +18,9 @@ class ComActivity : AppCompatActivity(), Callback {
         super.onCreate(savedInstanceState)
         binding = ActivityComBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val messagePlayer = intent.getStringExtra("this message")
+
+        //get dataa nama player from MenuActivity
+        val messagePlayer = intent.getStringExtra("this player")
         val comPlayer = findViewById<TextView>(R.id.player1Com).apply{
             text = messagePlayer
         }

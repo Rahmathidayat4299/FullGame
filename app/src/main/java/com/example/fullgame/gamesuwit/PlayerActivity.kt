@@ -4,15 +4,9 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-//import android.widget.Button
-//import android.widget.ImageView
-//import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.example.fullgame.R
-import com.example.fullgame.databinding.ActivityComBinding
 import com.example.fullgame.databinding.ActivityPlayerBinding
-import com.example.gamesuwit.Callback
-import com.example.gamesuwit.Controller
 
 class PlayerActivity : AppCompatActivity(), Callback {
     private lateinit var binding: ActivityPlayerBinding
@@ -30,7 +24,10 @@ class PlayerActivity : AppCompatActivity(), Callback {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val messagePlayer = intent.getStringExtra("this player")
+        val comPlayer = findViewById<TextView>(R.id.player1).apply{
+            text = messagePlayer
+        }
 
 
 //        batup1 = findViewById(R.id.batup1)
@@ -101,49 +98,5 @@ class PlayerActivity : AppCompatActivity(), Callback {
         binding.tvVS.setBackgroundColor(getColor(background))
         binding.tvVS.setTextColor(textColor)
     }
-
-
-//    private fun controlGame(playerSatu: CharSequence, com: CharSequence) {
-//        if (playerSatu == com) {
-////            tv_VS.text = "Draw"
-//            tvVS.setBackgroundResource(R.drawable.bg_draw)
-//            tvVS.setText(R.string.Draw)
-//            tvVS.setTextColor(getColor(R.color.white))
-//
-//        } else if ((playerSatu == batup1.contentDescription) && (com == guntingCom.contentDescription) || (playerSatu == guntingp1.contentDescription) && (com == kertasCom.contentDescription) || (playerSatu == kertasp1.contentDescription) && (com == batuCom.contentDescription)) {
-//
-//
-////            tv_VS.text = "Player 1 menang"
-//            tvVS.setBackgroundResource(R.drawable.bg_win)
-//            tvVS.setText(R.string.winplayer1)
-//            tvVS.setTextColor(getColor(R.color.white))
-//
-//
-//        } else {
-//            tvVS.setBackgroundResource(R.drawable.bg_win)
-//            tvVS.setText(R.string.comMenang)
-//            tvVS.setTextColor(getColor(R.color.white))
-//
-//
-//        }
-//        Log.d("hasil", "$playerSatu VS $com")
-
-
-//    }
-
-//    private fun notklikPemain(gunting: ImageView, kertas: ImageView, batu: ImageView) {
-//        batu.isEnabled = false
-//        gunting.isEnabled = false
-//        kertas.isEnabled = false
-//
-//    }
-//
-//    private fun trueklikPemain(gunting: ImageView, kertas: ImageView, batu: ImageView) {
-//        batu.isEnabled = true
-//        gunting.isEnabled = true
-//        kertas.isEnabled = true
-//
-//    }
-
 
 }

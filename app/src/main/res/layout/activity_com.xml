@@ -78,7 +78,7 @@
             android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:textColor="@color/blue"
-            android:text="@string/com"
+            android:text="@string/COM"
             android:textSize="20sp" />
 
         <ImageView
@@ -124,7 +124,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/black"
         android:background="@drawable/refresh"
 
         />

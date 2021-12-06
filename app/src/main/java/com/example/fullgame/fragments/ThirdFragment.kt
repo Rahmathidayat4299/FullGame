@@ -17,6 +17,7 @@ import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.fullgame.MenuActivity
 import com.example.fullgame.R
+import com.example.fullgame.gamesuwit.ComActivity
 
 
 class ThirdFragment : Fragment() {
@@ -72,6 +73,10 @@ class ThirdFragment : Fragment() {
             startActivity(it)
         }
 
+//        val intent2 = Intent(activity,ComActivity::class.java).also {
+//            it.putExtra("this message",namePlayer)
+//            startActivity(it)
+//        }
 
     }
 
