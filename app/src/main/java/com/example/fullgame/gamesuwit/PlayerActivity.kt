@@ -3,6 +3,7 @@ package com.example.fullgame.gamesuwit
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.example.fullgame.R
@@ -52,36 +53,69 @@ class PlayerActivity : AppCompatActivity(), Callback {
         )
 
         val controller = Controller(this)
-
-
-        playerSatu.forEachIndexed { index, imageView ->
-            imageView.setOnClickListener {
-//                val pilihanCom = com.random()
-                controller.check(
-                    playerSatu[index].contentDescription.toString(),
-                    playerDua[index].contentDescription.toString()
-                )
-
-                playerDua[index].setBackgroundResource(R.drawable.bg_image)
-//                notklikPemain(batup1, guntingp1, kertasp1)
+        playerSatu.forEachIndexed { index, ImageView ->
+            Log.e("pemain satu","klikk")
+            ImageView.setOnClickListener {
+                val hasilPemain = playerSatu[index].contentDescription.toString()
                 conditionClick(false)
+
                 playerSatu.forEach {
                     it.setBackgroundResource(android.R.color.transparent)
                 }
                 playerSatu[index].setBackgroundResource(R.drawable.bg_image)
+
+                playerDua.forEachIndexed { index, ImageView ->
+                    ImageView.setOnClickListener {
+
+                        val hasilPemainDua = playerDua[index].contentDescription.toString()
+                        conditionClickP2(false)
+                        controller.check(playerSatu[index].contentDescription.toString(),
+                   playerDua[index].contentDescription.toString())
+                        playerDua.forEach {
+                            it.setBackgroundResource(android.R.color.transparent)
+                        }
+                        playerDua[index].setBackgroundResource(R.drawable.bg_image)
+                    }
+                }
             }
         }
+
+
+//        playerSatu.forEachIndexed { index, imageView ->
+//            imageView.setOnClickListener {
+//                controller.check(
+//                    playerSatu[index].contentDescription.toString(),
+//                    playerDua[index].contentDescription.toString()
+//                )
+//
+//                playerDua[index].setBackgroundResource(R.drawable.bg_image)
+////                notklikPemain(batup1, guntingp1, kertasp1)
+//                conditionClick(false)
+//                playerSatu.forEach {
+//                    it.setBackgroundResource(android.R.color.transparent)
+//                }
+//                playerSatu[index].setBackgroundResource(R.drawable.bg_image)
+//
+//            }
+//
+//
+//
+//
+//        }
+
 
 
 
         binding.btnReset.setOnClickListener {
             playerSatu.forEach {
                 it.setBackgroundResource(android.R.color.transparent)
+                conditionClick(true)
+
             }
 //            trueklikPemain(batup1, guntingp1, kertasp1)
             playerDua.forEach {
                 it.setBackgroundResource(android.R.color.transparent)
-                conditionClick(true)
+                conditionClickP2(true)
             }
         }
     }
@@ -90,6 +124,12 @@ class PlayerActivity : AppCompatActivity(), Callback {
         binding.batup1.isEnabled = isEnable
         binding.kertasp1.isEnabled = isEnable
         binding.guntingp1.isEnabled = isEnable
+    }
+
+    private fun conditionClickP2(isEnable: Boolean) {
+        binding.batuCom.isEnabled = isEnable
+        binding.kertasCom.isEnabled = isEnable
+        binding.guntingCom.isEnabled = isEnable
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
