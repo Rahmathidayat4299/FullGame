@@ -1,4 +1,4 @@
-package com.example.fullgame.fragments;
+package com.example.fullgame.fragments
 
 
 import android.content.Intent
@@ -17,18 +17,11 @@ import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.fullgame.MenuActivity
 import com.example.fullgame.R
-import com.example.fullgame.gamesuwit.ComActivity
 
 
 class ThirdFragment : Fragment() {
     private lateinit var fillText: EditText
     private lateinit var btnName: Button
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,7 +44,7 @@ class ThirdFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                btnName.isVisible = !s.toString().trim().isEmpty()
+                btnName.isVisible = s.toString().trim().isNotEmpty()
 
             }
         })

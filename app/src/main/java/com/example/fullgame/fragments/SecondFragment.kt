@@ -1,4 +1,4 @@
-package com.example.fullgame.fragments;
+package com.example.fullgame.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,11 +13,6 @@ import com.example.fullgame.R
 
 
 class SecondFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

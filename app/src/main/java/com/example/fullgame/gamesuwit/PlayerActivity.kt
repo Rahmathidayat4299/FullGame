@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.fullgame.R
 import com.example.fullgame.databinding.ActivityPlayerBinding
@@ -26,7 +27,7 @@ class PlayerActivity : AppCompatActivity(), Callback {
         binding = ActivityPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val messagePlayer = intent.getStringExtra("this player")
-        val comPlayer = findViewById<TextView>(R.id.player1).apply{
+        val comPlayer = findViewById<TextView>(R.id.player1).apply {
             text = messagePlayer
         }
 
@@ -52,31 +53,54 @@ class PlayerActivity : AppCompatActivity(), Callback {
             binding.guntingCom
         )
 
+        var hasilPlayerSatu = ""
+        var hasilPlayerDua = ""
+
+
         val controller = Controller(this)
+
         playerSatu.forEachIndexed { index, ImageView ->
-            Log.e("pemain satu","klikk")
+            controller.check(
+                playerSatu[index].contentDescription.toString(),
+                playerDua[index].contentDescription.toString()
+            )
+
             ImageView.setOnClickListener {
-                val hasilPemain = playerSatu[index].contentDescription.toString()
+                hasilPlayerSatu = playerSatu[index].contentDescription.toString()
                 conditionClick(false)
+                conditionClickP2(true)
+                if (hasilPlayerDua != "") {
+                    controller.check(hasilPlayerSatu, hasilPlayerDua)
+                }
+
 
                 playerSatu.forEach {
                     it.setBackgroundResource(android.R.color.transparent)
                 }
                 playerSatu[index].setBackgroundResource(R.drawable.bg_image)
 
-                playerDua.forEachIndexed { index, ImageView ->
-                    ImageView.setOnClickListener {
 
-                        val hasilPemainDua = playerDua[index].contentDescription.toString()
-                        conditionClickP2(false)
-                        controller.check(playerSatu[index].contentDescription.toString(),
-                   playerDua[index].contentDescription.toString())
-                        playerDua.forEach {
-                            it.setBackgroundResource(android.R.color.transparent)
-                        }
-                        playerDua[index].setBackgroundResource(R.drawable.bg_image)
-                    }
+            }
+        }
+        playerDua.forEachIndexed { index, ImageView ->
+            ImageView.setOnClickListener {
+                controller.check(
+                    playerSatu[index].contentDescription.toString(),
+                    playerDua[index].contentDescription.toString()
+                )
+
+                hasilPlayerDua = playerDua[index].contentDescription.toString()
+                Toast.makeText(this, "Pemain dua memilih $hasilPlayerDua", Toast.LENGTH_SHORT).show()
+                conditionClickP2(false)
+
+                if (hasilPlayerSatu != "") {
+                    controller.check(hasilPlayerSatu, hasilPlayerDua)
                 }
+
+                playerDua.forEach {
+                    it.setBackgroundResource(android.R.color.transparent)
+                }
+                playerDua[index].setBackgroundResource(R.drawable.bg_image)
             }
         }
 
@@ -104,8 +128,6 @@ class PlayerActivity : AppCompatActivity(), Callback {
 //        }
 
 
-
-
         binding.btnReset.setOnClickListener {
             playerSatu.forEach {
                 it.setBackgroundResource(android.R.color.transparent)
@@ -117,6 +139,9 @@ class PlayerActivity : AppCompatActivity(), Callback {
                 it.setBackgroundResource(android.R.color.transparent)
                 conditionClickP2(true)
             }
+            hasilPlayerSatu = ""
+            hasilPlayerDua = ""
+
         }
     }
 

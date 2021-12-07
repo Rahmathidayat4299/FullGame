@@ -5,6 +5,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.fullgame.R
 import com.example.fullgame.databinding.ActivityComBinding
@@ -21,7 +22,7 @@ class ComActivity : AppCompatActivity(), Callback {
 
         //get dataa nama player from MenuActivity
         val messagePlayer = intent.getStringExtra("this player")
-        val comPlayer = findViewById<TextView>(R.id.player1Com).apply{
+        val comPlayer = findViewById<TextView>(R.id.player1Com).apply {
             text = messagePlayer
         }
 
@@ -59,6 +60,11 @@ class ComActivity : AppCompatActivity(), Callback {
                 )
 
                 pilihanCom.setBackgroundResource(R.drawable.bg_image)
+                Toast.makeText(
+                    this,
+                    "COM memilih ${pilihanCom.contentDescription}",
+                    Toast.LENGTH_SHORT
+                ).show()
 //                notklikPemain(batup1, guntingp1, kertasp1)
                 conditionClick(false)
                 playerSatu.forEach {

@@ -14,12 +14,6 @@ class Controller(private val callback: Callback) : InterfaceController {
             callback.checkGame(R.string.winplayer1, R.color.white, R.drawable.bg_win)
         } else if ((com == "batu") && (playerSatu == "gunting") || (com == "gunting") && (playerSatu == "kertas") || (com == "kertas") && (com == "playerSatu")) {
             callback.checkGame(R.string.comMenang, R.color.white, R.drawable.bg_win)
-//        } else if (playerSatu == playerDua) {
-//            callback.checkGame(R.string.Draw, R.color.white, R.drawable.bg_draw)
-//        } else if ((playerSatu == "batu") && (playerDua == "gunting") || (playerSatu == "gunting") && (playerDua == "kertas") || (playerSatu == "kertas") && (playerDua == "batu")) {
-//            callback.checkGame(R.string.winplayer1, R.color.white, R.drawable.bg_win)
-//        } else if ((playerSatu == "batu") && (playerDua == "kertas") || (playerSatu == "gunting") && (playerDua == "batu") || (playerSatu == "kertas") && (playerDua == "gunting")) {
-//            callback.checkGame(R.string.player2, R.color.white, R.drawable.bg_win)
             Log.d("hasil", "$playerSatu VS $com")
         }
     }

@@ -15,10 +15,11 @@ class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+        val messageSnackbar = intent.getStringExtra("this message")
 
         Snackbar.make(
             findViewById<ConstraintLayout>
-                (R.id.menuActivty), "Selamat Datang ", Snackbar.LENGTH_SHORT
+                (R.id.menuActivty), "Selamat Datang $messageSnackbar", Snackbar.LENGTH_SHORT
         ).setAction(
             "Tutup"
         ) {
@@ -74,7 +75,9 @@ class MenuActivity : AppCompatActivity() {
             it.putExtra("this player", namePlayer)
             startActivity(it)
         }
+
     }
+
 
 
 }
