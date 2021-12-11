@@ -1,6 +1,6 @@
-package com.example.fullgame.gamesuwit
+package com.example.fullgame.ui.com
 
-//import android.app.Activity
+import android.annotation.SuppressLint
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,9 +8,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.fullgame.R
+import com.example.fullgame.controller.Callback
+import com.example.fullgame.controller.Controller
 import com.example.fullgame.databinding.ActivityComBinding
+import com.example.fullgame.ui.CallbackDialog
+import com.example.fullgame.ui.dialog.WinPlayerSatu
 
-class ComActivity : AppCompatActivity(), Callback {
+
+class ComActivity : AppCompatActivity(), Callback,CallbackDialog {
     private lateinit var binding: ActivityComBinding
 
 
@@ -19,6 +24,10 @@ class ComActivity : AppCompatActivity(), Callback {
         super.onCreate(savedInstanceState)
         binding = ActivityComBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.ivClose.setOnClickListener {
+            finishAffinity()
+        }
 
         //get dataa nama player from MenuActivity
         val messagePlayer = intent.getStringExtra("this player")
@@ -56,7 +65,7 @@ class ComActivity : AppCompatActivity(), Callback {
                 val pilihanCom = com.random()
                 controller.check(
                     playerSatu[index].contentDescription.toString(),
-                    pilihanCom.contentDescription.toString()
+                    pilihanCom.contentDescription.toString(),messagePlayer,"com"
                 )
 
                 pilihanCom.setBackgroundResource(R.drawable.bg_image)
@@ -77,14 +86,15 @@ class ComActivity : AppCompatActivity(), Callback {
 
 
         binding.btnReset.setOnClickListener {
-            playerSatu.forEach {
-                it.setBackgroundResource(android.R.color.transparent)
-            }
-//            trueklikPemain(batup1, guntingp1, kertasp1)
-            com.forEach {
-                it.setBackgroundResource(android.R.color.transparent)
-                conditionClick(true)
-            }
+//            playerSatu.forEach {
+//                it.setBackgroundResource(android.R.color.transparent)
+//            }
+////            trueklikPemain(batup1, guntingp1, kertasp1)
+//            com.forEach {
+//                it.setBackgroundResource(android.R.color.transparent)
+//                conditionClick(true)
+//            }
+            resetGame(android.R.color.transparent,"","")
         }
     }
 
@@ -94,11 +104,30 @@ class ComActivity : AppCompatActivity(), Callback {
         binding.guntingp1.isEnabled = isEnable
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @RequiresApi(Build.VERSION_CODES.M)
-    override fun checkGame(text: Int, background: Int, textColor: Int) {
-        binding.tvVS.text = getString(text)
-        binding.tvVS.setBackgroundColor(getColor(background))
-        binding.tvVS.setTextColor(textColor)
+//    override fun checkGame(text: Int, background: Int, textColor: Int) {
+//        binding.tvVS.text = getString(text)
+//        binding.tvVS.setBackgroundColor(getColor(background))
+//        binding.tvVS.setTextColor(textColor)
+//    }
+    override fun checkGame(checkGame: String) {
+        val resultDialog = WinPlayerSatu()
+        val bundle = Bundle()
+        bundle.putString("winner",checkGame)
+        resultDialog.arguments = bundle
+        resultDialog.show(supportFragmentManager, "DialogResult")
+
+    }
+
+    override fun resetGame(bg: Int, hasilPemainSatu: String, hasilPemainDua: String) {
+        binding.batuCom.setBackgroundResource(bg)
+        binding.kertasCom.setBackgroundResource(bg)
+        binding.guntingCom.setBackgroundResource(bg)
+        binding.batup1.setBackgroundResource(bg)
+        binding.kertasp1.setBackgroundResource(bg)
+        binding.guntingp1.setBackgroundResource(bg)
+        conditionClick(true)
     }
 
 

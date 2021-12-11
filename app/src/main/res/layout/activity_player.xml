@@ -4,7 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gamesuwit.PlayerActivity">
+    tools:context=".ui.player.PlayerActivity">
+
+    <ImageView
+        android:id="@+id/ivClose"
+        style="@style/image"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        android:src="@drawable/close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/judul"
@@ -20,13 +29,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="86dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/btnReset"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btnReset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/judul">
 
@@ -36,30 +44,28 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/player1"
-            android:textStyle="bold"
             android:textColor="@color/blue"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/batup1"
             style="@style/image"
-            android:src="@drawable/batu"
-            android:contentDescription="@string/batu" />
+            android:contentDescription="@string/batu"
+            android:src="@drawable/batu" />
 
         <ImageView
             android:id="@+id/guntingp1"
             style="@style/image"
-            android:src="@drawable/gunting"
-            android:contentDescription="@string/gunting" />
+            android:contentDescription="@string/gunting"
+            android:src="@drawable/gunting" />
 
         <ImageView
             android:id="@+id/kertasp1"
             style="@style/image"
-            android:src="@drawable/kertas"
-            android:contentDescription="@string/kertas" />
+            android:contentDescription="@string/kertas"
+            android:src="@drawable/kertas" />
     </LinearLayout>
-
-
 
 
     <LinearLayout
@@ -67,8 +73,8 @@
         android:layout_width="89dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btnReset"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/judul">
 
         <TextView
@@ -84,21 +90,20 @@
         <ImageView
             android:id="@+id/batuCom"
             style="@style/image"
-            android:src="@drawable/batu"
-            android:contentDescription="@string/batu" />
+            android:contentDescription="@string/batu"
+            android:src="@drawable/batu" />
 
         <ImageView
             android:id="@+id/guntingCom"
             style="@style/image"
-            android:src="@drawable/gunting"
             android:contentDescription="@string/gunting"
-            />
+            android:src="@drawable/gunting" />
 
         <ImageView
             android:id="@+id/kertasCom"
             style="@style/image"
-            android:src="@drawable/kertas"
-            android:contentDescription="@string/kertas" />
+            android:contentDescription="@string/kertas"
+            android:src="@drawable/kertas" />
     </LinearLayout>
 
     <TextView
@@ -110,22 +115,21 @@
         android:textColor="@color/red"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/linearLayout"
         app:layout_constraintEnd_toStartOf="@+id/com"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/judul"
-        app:layout_constraintBottom_toBottomOf="@id/linearLayout"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/judul" />
 
     <Button
         android:id="@+id/btnReset"
-        android:src="@drawable/refresh"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/refresh"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/refresh"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/white"
-        android:background="@drawable/refresh"
 
         />
 

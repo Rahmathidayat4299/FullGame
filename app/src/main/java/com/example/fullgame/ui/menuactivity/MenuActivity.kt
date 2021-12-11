@@ -1,4 +1,4 @@
-package com.example.fullgame
+package com.example.fullgame.ui.menuactivity
 
 
 import android.content.Intent
@@ -7,8 +7,9 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.fullgame.gamesuwit.ComActivity
-import com.example.fullgame.gamesuwit.PlayerActivity
+import com.example.fullgame.R
+import com.example.fullgame.ui.com.ComActivity
+import com.example.fullgame.ui.player.PlayerActivity
 import com.google.android.material.snackbar.Snackbar
 
 class MenuActivity : AppCompatActivity() {

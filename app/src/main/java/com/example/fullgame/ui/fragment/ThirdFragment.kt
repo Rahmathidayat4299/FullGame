@@ -1,4 +1,4 @@
-package com.example.fullgame.fragments
+package com.example.fullgame.ui.fragment
 
 
 import android.content.Intent
@@ -15,8 +15,8 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
-import com.example.fullgame.MenuActivity
 import com.example.fullgame.R
+import com.example.fullgame.ui.menuactivity.MenuActivity
 
 
 class ThirdFragment : Fragment() {
@@ -61,7 +61,7 @@ class ThirdFragment : Fragment() {
 
     private fun sendMessage(){
         val namePlayer = fillText.text.toString()
-        val intent = Intent(activity,MenuActivity::class.java).also {
+        val intent = Intent(activity, MenuActivity::class.java).also {
             it.putExtra("this message",namePlayer)
             startActivity(it)
         }

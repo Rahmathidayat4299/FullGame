@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FirstFragment">
+    tools:context=".ui.fragment.FirstFragment">
 
 
     <ImageView
@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/firstTV"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
         android:id="@+id/first"/>
 <!--        android:src="@drawable/ic_one" />-->
@@ -19,11 +20,11 @@
     <TextView
         android:id="@id/firstTV"
         android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="30sp"
-        android:textAlignment="center"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="@string/first_fragment" />
+        android:layout_centerInParent="true"
+        android:text="@string/first_fragment"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.SecondFragment">
+    tools:context=".ui.fragment.SecondFragment">
 
 
     <ImageView
@@ -31,6 +31,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:maxLength="10"
         app:layout_constraintBottom_toTopOf="@id/btnName"
         app:layout_constraintEnd_toEndOf="@id/tvThird"
         app:layout_constraintHorizontal_bias="0.497"

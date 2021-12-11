@@ -1,17 +1,10 @@
-package com.example.fullgame
+package com.example.fullgame.ui.fragment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.view.View
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
+import com.example.fullgame.R
 import com.example.fullgame.adapters.ViewPagerAdapter
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import me.relex.circleindicator.CircleIndicator3
 
 class MainActivity() : AppCompatActivity() {

@@ -4,9 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.fullgame.fragments.FirstFragment
-import com.example.fullgame.fragments.SecondFragment
-import com.example.fullgame.fragments.ThirdFragment
+import com.example.fullgame.ui.fragment.FirstFragment
+import com.example.fullgame.ui.fragment.SecondFragment
+import com.example.fullgame.ui.fragment.ThirdFragment
 
 class ViewPagerAdapter(fragmentManager:FragmentManager,lifecycle: Lifecycle): FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int {
