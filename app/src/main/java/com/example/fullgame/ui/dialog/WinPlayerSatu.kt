@@ -9,8 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.fullgame.R
-import com.example.fullgame.ui.CallbackDialog
-import com.example.fullgame.ui.com.ComActivity
+import com.example.fullgame.controller.CallbackDialog
 import java.lang.Exception
 
 

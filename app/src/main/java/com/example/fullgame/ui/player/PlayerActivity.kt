@@ -1,5 +1,6 @@
 package com.example.fullgame.ui.player
 
+import android.content.pm.ActivityInfo
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +11,7 @@ import com.example.fullgame.R
 import com.example.fullgame.controller.Callback
 import com.example.fullgame.controller.Controller
 import com.example.fullgame.databinding.ActivityPlayerBinding
-import com.example.fullgame.ui.CallbackDialog
+import com.example.fullgame.controller.CallbackDialog
 import com.example.fullgame.ui.dialog.WinPlayerSatu
 
 class PlayerActivity : AppCompatActivity(), Callback, CallbackDialog {
@@ -28,6 +29,7 @@ class PlayerActivity : AppCompatActivity(), Callback, CallbackDialog {
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         super.onCreate(savedInstanceState)
         binding = ActivityPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)

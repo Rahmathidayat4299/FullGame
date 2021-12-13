@@ -12,11 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FullGame">
         <activity
-            android:name=".ui.PlayerSatuWin"
-            android:exported="false" />
-        <activity
             android:name=".ui.player.PlayerActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".ui.com.ComActivity"
             android:exported="false" />

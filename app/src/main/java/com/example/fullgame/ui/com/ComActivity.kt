@@ -1,6 +1,7 @@
 package com.example.fullgame.ui.com
 
 import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,16 +12,17 @@ import com.example.fullgame.R
 import com.example.fullgame.controller.Callback
 import com.example.fullgame.controller.Controller
 import com.example.fullgame.databinding.ActivityComBinding
-import com.example.fullgame.ui.CallbackDialog
+import com.example.fullgame.controller.CallbackDialog
 import com.example.fullgame.ui.dialog.WinPlayerSatu
 
 
-class ComActivity : AppCompatActivity(), Callback,CallbackDialog {
+class ComActivity : AppCompatActivity(), Callback, CallbackDialog {
     private lateinit var binding: ActivityComBinding
 
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         super.onCreate(savedInstanceState)
         binding = ActivityComBinding.inflate(layoutInflater)
         setContentView(binding.root)
