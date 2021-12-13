@@ -30,6 +30,9 @@
     <style name="ThirdFragment">
         <item name="backgroundTint">@color/blue</item>
     </style>
+    <style name="ResetButton">
+        <item name="backgroundTint">@color/black</item>
+    </style>
 
 
 </resources>
