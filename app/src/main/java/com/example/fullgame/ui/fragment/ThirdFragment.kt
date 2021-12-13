@@ -65,12 +65,6 @@ class ThirdFragment : Fragment() {
             it.putExtra("this message",namePlayer)
             startActivity(it)
         }
-
-//        val intent2 = Intent(activity,ComActivity::class.java).also {
-//            it.putExtra("this message",namePlayer)
-//            startActivity(it)
-//        }
-
     }
 
 

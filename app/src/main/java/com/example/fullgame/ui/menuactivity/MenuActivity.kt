@@ -48,19 +48,6 @@ class MenuActivity : AppCompatActivity() {
         playerVsCom.setOnClickListener {
             sendMessageCom()
         }
-
-//        playerVsCom.setOnClickListener {
-//            val mIntent = Intent(this, ComActivity::class.java)
-//            startActivity(mIntent)
-//            sendMessage()
-//        }
-
-//        playerVsplayer.setOnClickListener {
-//            val mIntent = Intent(this, PlayerActivity::class.java)
-//            startActivity(mIntent)
-//        }
-
-
     }
 
     private fun sendMessageCom() {
